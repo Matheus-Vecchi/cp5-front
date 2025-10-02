@@ -2,7 +2,5 @@
 
 
 @layer base {
-    body {
-        @apply text-center mx-[15%];   
-    }
+    
 }
