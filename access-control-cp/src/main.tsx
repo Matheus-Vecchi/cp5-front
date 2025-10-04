@@ -6,12 +6,10 @@ import './globals.css'
 import App from './App.tsx'
 import Login from './routes/Login/index.tsx'
 
-
 import Error from './routes/Error/index.tsx'
 
-import { createBrowserRouter } from 'react-router-dom'
 
-
+import { createBrowserRouter, RouterProvider } from 'react-router-dom'
 
 
 const router = createBrowserRouter([
@@ -22,6 +20,6 @@ const router = createBrowserRouter([
 
 createRoot(document.getElementById('root')!).render(
   <StrictMode>
-    <App />
+    <RouterProvider router={router}/>
   </StrictMode>,
 )
