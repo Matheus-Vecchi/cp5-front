@@ -1,0 +1,16 @@
+{
+  "usuarios": [
+    {
+      "id": "ebf9",
+      "nome": "vampeta",
+      "nomeUsuario": "vampeta1",
+      "email": "vampeta@email.com"
+    },
+    {
+      "id": "6665",
+      "nome": "dasdad",
+      "nomeUsuario": "kleberGladiator",
+      "email": "kleber@email.com"
+    }
+  ]
+}
