@@ -1,7 +1,7 @@
 import { useNavigate } from "react-router-dom";
 import type { TipoCadastro } from "../../types/tipoCadastro";
 import { useForm } from "react-hook-form";
-const API_URL = import.meta.env.VITE_API_URL_BASE;
+const API_URL = import.meta.env.VITE_API_URL;
 
 
 export default function Cadastro() {
@@ -10,8 +10,10 @@ export default function Cadastro() {
 
     const onSubmit = async (data: TipoCadastro) => {
         try {
+            console.log("Dados enviados: ", data);
             const res = await fetch(API_URL);
             const usuarios = await res.json();
+            console.log("Usuários atuais: ", usuarios);
 
             const duplicado = usuarios.find(
                 (u: any) => u.nomeUsuario === data.nomeUsuario || u.email === data.email
@@ -29,7 +31,7 @@ export default function Cadastro() {
             });
 
             alert("Cadastro realizado com sucesso!");
-            navigate("/login");
+            navigate("/");
         } catch (error) {
             console.error(error);
         }
