@@ -1,15 +1,16 @@
 import { useForm } from "react-hook-form";
 import type { TipoLogin } from "../../types/tipoLogin";
 import { useNavigate } from "react-router-dom";
+const API_URL = import.meta.env.VITE_API_URL_BASE;
 
 
 export default function Login() {
     const navigate = useNavigate();
     const { register, handleSubmit, formState: { errors } } = useForm<TipoLogin>();
-
+    
     const onSubmit = async (data: TipoLogin) => {
         try {
-            const res = await fetch("http://localhost:3001/usuarios");
+            const res = await fetch(API_URL);
             const usuarios = await res.json();
 
             const user = usuarios.find(
