@@ -45,7 +45,7 @@ export default function Login() {
                     </div>
 
                     <div className="flex">
-                        <button type="submit" className="font-medium mx-auto w-[130px] sm:w-[176px] mt-6 bg-white text-[#00532E] py-2 rounded-full hover:white transition-colors">Entrar</button>
+                        <button type="submit" className="font-medium mx-auto w-[130px] sm:w-[176px] mt-6 bg-white text-[#00532E] py-2 rounded-full">Entrar</button>
                     </div>
 
                     <div>
