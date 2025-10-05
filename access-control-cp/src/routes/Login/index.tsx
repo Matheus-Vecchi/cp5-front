@@ -29,11 +29,31 @@ export default function Login() {
         <main className="text-center mt-[12vh]">
             <h1 className="text-[30px] sm:text-[40px]">Login</h1>
 
-            <div>
-                <form onSubmit={handleSubmit(onSubmit)}>
+            <form onSubmit={handleSubmit(onSubmit)}>
+                <fieldset>
+                    <legend>Formulário de Login</legend>
 
-                </form>
-            </div>
+                    <div>
+                        <label htmlFor="nomeUsuario">Nome de Usuário:</label>
+                        <input type="text" id="nomeUsuario" placeholder="Nome de usuário" {...register("nomeUsuario", { required: "Nome de usuário obrigatório" })}/>
+                        {errors.nomeUsuario && <span className="text-red-500">{errors.nomeUsuario.message}</span>}
+                    </div>
+
+                    <div>
+                        <label htmlFor="email">Email:</label>
+                        <input type="text" id="email" placeholder="Digite seu email" {...register("email", { required: "Email obrigatório"})}/>
+                        {errors.email && <span className="text-red-500">{errors.email.message}</span>}
+                    </div>
+
+                    <div>
+                        <button type="submit">Entrar</button>
+                    </div>
+
+                    <div>
+                        <button type="button" onClick={() => navigate("/cadastro")}>Não tem uma conta? Cadastre-se</button>
+                    </div>
+                </fieldset>
+            </form>
         </main>
     );
 }
