@@ -1,7 +1,7 @@
 import { useForm } from "react-hook-form";
 import type { TipoLogin } from "../../types/tipoLogin";
 import { useNavigate } from "react-router-dom";
-const API_URL = import.meta.env.VITE_API_URL_BASE;
+const API_URL = import.meta.env.VITE_API_URL;
 
 
 export default function Login() {
