@@ -26,31 +26,29 @@ export default function Login() {
     };
 
     return(
-        <main className="text-center mt-[12vh]">
-            <h1 className="text-[30px] sm:text-[40px]">Login</h1>
+        <main className="min-h-screen flex flex-col items-center mt-[100px]">
+            <h1 className="text-[30px] sm:text-[40px] font-bold mb-6 text-[#00532E]">Login</h1>
 
-            <form onSubmit={handleSubmit(onSubmit)}>
-                <fieldset>
-                    <legend>Formulário de Login</legend>
-
-                    <div>
-                        <label htmlFor="nomeUsuario">Nome de Usuário:</label>
-                        <input type="text" id="nomeUsuario" placeholder="Nome de usuário" {...register("nomeUsuario", { required: "Nome de usuário obrigatório" })}/>
+            <form onSubmit={handleSubmit(onSubmit)} className="bg-[#00532E] rounded-lg p-2 w-full max-w-md flex flex-col space-y-4">
+                <fieldset className="w-full max-w-md p-4">
+                    <div className="flex flex-col">
+                        <label htmlFor="nomeUsuario" className="text-white my-2 font-medium">Nome de Usuário:</label>
+                        <input type="text" id="nomeUsuario" placeholder="Nome de usuário" {...register("nomeUsuario", { required: "Nome de usuário obrigatório" })} className="border border-white rounded-lg px-4 py-2 focus:outline-none focus:ring-2"/>
                         {errors.nomeUsuario && <span className="text-red-500">{errors.nomeUsuario.message}</span>}
                     </div>
 
-                    <div>
-                        <label htmlFor="email">Email:</label>
-                        <input type="text" id="email" placeholder="Digite seu email" {...register("email", { required: "Email obrigatório"})}/>
+                    <div className="flex flex-col">
+                        <label htmlFor="email" className="text-white my-2 font-medium">Email:</label>
+                        <input type="text" id="email" placeholder="Email" {...register("email", { required: "Email obrigatório"})} className="border border-white rounded-lg px-4 py-2 focus:outline-none focus:ring-2"/>
                         {errors.email && <span className="text-red-500">{errors.email.message}</span>}
                     </div>
 
-                    <div>
-                        <button type="submit">Entrar</button>
+                    <div className="flex">
+                        <button type="submit" className="font-medium mx-auto w-[130px] sm:w-[176px] mt-6 bg-white text-[#00532E] py-2 rounded-full hover:white transition-colors">Entrar</button>
                     </div>
 
                     <div>
-                        <button type="button" onClick={() => navigate("/cadastro")}>Não tem uma conta? Cadastre-se</button>
+                        <button type="button" onClick={() => navigate("/cadastro")} className="text-white mt-2">Não tem uma conta? Cadastre-se</button>
                     </div>
                 </fieldset>
             </form>
